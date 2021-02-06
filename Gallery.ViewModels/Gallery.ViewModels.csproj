@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B86E6B49-4C2A-4D05-8381-5FAB91A4A43B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gallery.ViewModels</RootNamespace>
+    <AssemblyName>Gallery.ViewModels</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyVersion.cs">
+      <Link>Properties\SharedAssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="AjaxViewModel.cs" />
+    <Compile Include="Branch\CreateEditViewModel.cs" />
+    <Compile Include="Branch\IndexViewModel.cs" />
+    <Compile Include="ChangePasswordViewModel.cs" />
+    <Compile Include="ComplaintType\CreateEditViewModel.cs" />
+    <Compile Include="ComplaintType\IndexViewModel.cs" />
+    <Compile Include="CustomerVisitCategory\CreateEditViewModel.cs" />
+    <Compile Include="CustomerVisitCategory\IndexViewModel.cs" />
+    <Compile Include="EmployeeVisitCategory\CreateEditViewModel.cs" />
+    <Compile Include="EmployeeVisitCategory\IndexViewModel.cs" />
+    <Compile Include="EmployeeVisitResponse\CreateEditViewModel.cs" />
+    <Compile Include="EmployeeVisitResponse\IndexViewModel.cs" />
+    <Compile Include="External\FactAgent\IndexViewModel.cs" />
+    <Compile Include="External\FactCustomer\IndexViewModel.cs" />
+    <Compile Include="External\FactProduct\IndexViewModel.cs" />
+    <Compile Include="Role\CreateEditViewModel.cs" />
+    <Compile Include="Role\IndexViewModel.cs" />
+    <Compile Include="Fee\CreateEditViewModel.cs" />
+    <Compile Include="Fee\IndexViewModel.cs" />
+    <Compile Include="Taxonomy\CreateEditViewModel.cs" />
+    <Compile Include="Taxonomy\IndexViewModel.cs" />
+    <Compile Include="LoginViewModel.cs" />
+    <Compile Include="MenuAccess\ListMenuViewModel.cs" />
+    <Compile Include="MenuAccess\RoleAccessViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Region\CreateEditViewModel.cs" />
+    <Compile Include="Region\IndexViewModel.cs" />
+    <Compile Include="Region\RegionViewModel.cs" />
+    <Compile Include="Taxonomy\ListTaxonomyViewModel.cs" />
+    <Compile Include="Unit\CreateEditViewModel.cs" />
+    <Compile Include="Unit\IndexViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gallery.DataAccess\Gallery.DataAccess.csproj">
+      <Project>{6e91f664-6d62-4ee5-b648-f09da65b7147}</Project>
+      <Name>Gallery.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gallery.Framework\Gallery.Framework.csproj">
+      <Project>{04e26983-77b0-492e-9bb6-8aebcc73dcfc}</Project>
+      <Name>Gallery.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

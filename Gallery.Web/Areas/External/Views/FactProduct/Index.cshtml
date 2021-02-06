@@ -1,0 +1,37 @@
+﻿@model Gallery.ViewModels.External.FactProduct.IndexViewModel
+
+<div class="page-title">Fact Product</div>
+<div class="row" id="viewModelWorkspace">
+    <div class="col-md-12">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            @(Html.Kendo().Grid(Model.List)
+                .Name("grid")
+                .HtmlAttributes(new { data_editurl = Url.Action("Edit") })
+                .EnableCustomBinding(true).Columns(
+                  col =>
+                  {
+                      col.Template(@<text></text>).ClientTemplate(@"<a data-id='#=Prodcode#' href='" + Url.Action("Detail", new { prodcode="#=Prodcode#" }) + "' class='detailRow'>#=Prodcode#</a>").Title("Product Code");
+                      col.Bound(m => m.Descript);
+                      col.Bound(m => m.UomPurch);
+                      col.Bound(m => m.UomStk);
+                      col.Bound(m => m.UomSale);
+                      col.Bound(m => m.InStock);
+                      col.Bound(m => m.CloseVal);
+                      col.Bound(m => m.CloseQty);
+                      col.Bound(m => m.Rate);
+                  })
+                .Mobile()
+                .Filterable()
+                .Pageable()
+                .Resizable(resize => resize.Columns(true))
+                .DataSource(ds => ds.Ajax()
+                                    .Read("List", "FactProduct", new { area = "External" }))
+                .Sortable(s => s.SortMode(GridSortMode.MultipleColumn))
+            )
+
+
+}
+    </div>
+</div>

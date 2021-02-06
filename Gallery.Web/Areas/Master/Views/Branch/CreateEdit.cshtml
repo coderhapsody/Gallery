@@ -1,0 +1,82 @@
+﻿@model Gallery.ViewModels.Branch.CreateEditViewModel
+
+<div style="width: 600px;">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "addEditForm", name = "addEditForm" }))
+    {
+        @Html.HiddenFor(m => m.Id)
+        @FormHelper.RenderAuditFields(Model)
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.BranchCode): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().TextBoxFor(m => m.BranchCode)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.Description): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().TextBoxFor(m => m.Description).HtmlAttributes(new { style = "width:400px;" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.Address1): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().TextBoxFor(m => m.Address1).HtmlAttributes(new { style = "width:400px;" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.Address2): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().TextBoxFor(m => m.Address2).HtmlAttributes(new { style = "width:400px;" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.Phone1): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().TextBoxFor(m => m.Phone1).HtmlAttributes(new { style = "width:150px;" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.Phone2): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().TextBoxFor(m => m.Phone2).HtmlAttributes(new { style = "width:150px;" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.Email1): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().TextBoxFor(m => m.Email1).HtmlAttributes(new { style = "width:200px;" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.Email2): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().TextBoxFor(m => m.Email2).HtmlAttributes(new { style = "width:200px;" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">@Html.LabelFor(m => m.Active): </div>
+                <div class="col-md-7">
+                    @Html.Kendo().CheckBoxFor(m => m.Active)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2"></div>
+                <div class="col-md-7">
+                    <button type="button" id="btnSave" name="btnSave" class="k-button">@Gallery.Resources.Strings.SaveButtonText</button>
+                    <button type="button" id="btnClose" name="btnClose" class="k-button">@Gallery.Resources.Strings.CloseButtonText</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

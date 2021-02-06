@@ -1,0 +1,66 @@
+﻿@model Gallery.DataAccess.FactAgent
+
+<div class="page-title">Fact Agent</div>
+<div class="row" id="viewModelWorkspace">
+    <div class="col-md-12">
+        <table class="table-condensed table-responsive">
+            <tr>
+                <td class="field-title">Agent Code:</td>
+                <td>@Html.DisplayFor(model => model.Agentcode)</td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>@Html.DisplayFor(model => model.Name)</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>@Html.DisplayFor(model => model.Address)</td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>@Html.DisplayFor(model => model.City)</td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>@Html.DisplayFor(model => model.State)</td>
+            </tr>
+            <tr>
+                <td>Pincode:</td>
+                <td>@Html.DisplayFor(model => model.Pincode)</td>
+            </tr>
+            <tr>
+                <td>Telephone:</td>
+                <td>@Html.DisplayFor(model => model.Telephone)</td>
+            </tr>
+            <tr>
+                <td>Terms:</td>
+                <td>@Html.DisplayFor(model => model.Terms)</td>
+            </tr>
+            <tr>
+                <td>Last Paid Date:</td>
+                <td>@Model.LpaidDate.GetValueOrDefault().ToString("dd MMM yyyy")</td>
+            </tr>
+            <tr>
+                <td>Last Purchase Date:</td>
+                <td>@Model.LpurcDate.GetValueOrDefault().ToString("dd MMM yyyy")</td>
+            </tr>
+            <tr>
+                <td>Creditlt:</td>
+                <td>@Html.DisplayFor(model => model.CreditLt)</td>
+            </tr>
+            <tr>
+                <td>Credit Now:</td>
+                <td>@Html.DisplayFor(model => model.CreditNow)</td>
+            </tr>
+            <tr>
+                <td>Commperc:</td>
+                <td>@Html.DisplayFor(model => model.Commperc)</td>
+            </tr>
+        </table>
+        <br/>
+        <p>
+            <a href="@Url.Action("Index")" class="btn btn-default"><i class="fa fa-backward"></i> Back to List</a>            
+        </p>
+
+    </div>
+</div>

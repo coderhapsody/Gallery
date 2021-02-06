@@ -1,0 +1,38 @@
+﻿@model Gallery.ViewModels.External.FactAgent.IndexViewModel
+
+<div class="page-title">Fact Agent</div>
+<div class="row" id="viewModelWorkspace">
+    <div class="col-md-12">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            @(Html.Kendo().Grid(Model.List)
+                .Name("grid")
+                .HtmlAttributes(new { data_editurl = Url.Action("Edit") })
+                .EnableCustomBinding(true).Columns(
+                  col =>
+                  {
+                      col.Template(@<text></text>).ClientTemplate(@"<a data-id='#=Agentcode#' href='" + Url.Action("Detail", new { agentcode = "#=Agentcode#" }) + "' class='detailRow'>#=Agentcode#</a>").Title("Agent Code");
+                      col.Bound(m => m.Name);
+                      col.Bound(m => m.Pincode);
+                      col.Bound(m => m.Address);
+                      col.Bound(m => m.City);
+                      col.Bound(m => m.Telephone);
+                      col.Bound(m => m.CreditLt);
+                      col.Bound(m => m.CreditNow);
+                      col.Bound(m => m.LpaidDate).Format("{0:dd-MMM-yyyy}");
+                      col.Bound(m => m.LpurcDate).Format("{0:dd-MMM-yyyy}");
+                  })
+                .Mobile()
+                .Filterable()
+                .Pageable()
+                .Resizable(resize => resize.Columns(true))
+                .DataSource(ds => ds.Ajax()
+                                    .Read("List", "FactAgent", new { area = "External" }))
+                .Sortable(s => s.SortMode(GridSortMode.MultipleColumn))
+            )
+
+
+        }
+    </div>
+</div>
